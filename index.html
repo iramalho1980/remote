@@ -61,294 +61,181 @@
             flex-wrap: wrap;
         }
 
-        .mode-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            border-radius: 15px;
-            padding: 15px 30px;
+        .mode-button {
+            background: rgba(255, 255, 255, 0.15);
             color: white;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            border: 2px solid transparent;
-        }
-
-        .mode-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .mode-btn.active {
-            background: rgba(255, 255, 255, 0.4);
-            border-color: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
-        }
-
-        .section {
-            display: none;
-            animation: fadeIn 0.5s ease-in;
-        }
-
-        .section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .code-display {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            padding: 20px;
-            margin: 20px 0;
-            text-align: center;
-        }
-
-        .access-code {
-            font-size: 2rem;
-            font-weight: bold;
-            color: #00ff88;
-            letter-spacing: 3px;
-            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-            margin: 10px 0;
-        }
-
-        .code-input {
-            background: rgba(255, 255, 255, 0.1);
-            border: 2px solid rgba(255, 255, 255, 0.3);
+            border: none;
+            padding: 15px 25px;
             border-radius: 10px;
-            padding: 15px;
-            color: white;
-            font-size: 1.2rem;
-            text-align: center;
-            letter-spacing: 2px;
-            width: 100%;
-            max-width: 300px;
-            margin: 10px auto;
-            display: block;
-        }
-
-        .code-input::placeholder {
-            color: rgba(255, 255, 255, 0.6);
-        }
-
-        .code-input:focus {
-            outline: none;
-            border-color: #00ff88;
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-        }
-
-        .control-btn {
-            background: linear-gradient(45deg, #00ff88, #00cc6a);
-            border: none;
-            border-radius: 12px;
-            padding: 15px 30px;
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin: 10px;
-            box-shadow: 0 4px 15px rgba(0, 255, 136, 0.3);
+            font-size: 1.1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
         }
 
-        .control-btn:hover {
+        .mode-button:hover {
+            background: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
         }
 
-        .control-btn:active {
-            transform: translateY(0);
+        .mode-button.active {
+            background: rgba(255, 255, 255, 0.3);
         }
 
-        .control-btn.danger {
-            background: linear-gradient(45deg, #ff4757, #ff3742);
-            box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+        .form-group {
+            margin-bottom: 20px;
         }
 
-        .control-btn.danger:hover {
-            box-shadow: 0 6px 20px rgba(255, 71, 87, 0.4);
+        .form-group label {
+            display: block;
+            color: white;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
         }
 
-        .control-btn.secondary {
-            background: linear-gradient(45deg, #3742fa, #2f3542);
-            box-shadow: 0 4px 15px rgba(55, 66, 250, 0.3);
+        .form-group input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            outline: none;
+            transition: background 0.3s ease;
         }
 
-        .control-btn.secondary:hover {
-            box-shadow: 0 6px 20px rgba(55, 66, 250, 0.4);
+        .form-group input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.7);
         }
 
-        .video-container {
-            position: relative;
-            margin: 20px 0;
-            border-radius: 15px;
-            overflow: hidden;
-            background: rgba(0, 0, 0, 0.3);
-            min-height: 300px;
+        .form-group input[type="text"]:focus {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .action-buttons {
             display: flex;
-            align-items: center;
+            gap: 15px;
             justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .video-container.fullscreen {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: 9999;
-            border-radius: 0;
-            margin: 0;
+        .action-buttons button {
+            background: linear-gradient(45deg, #4CAF50 0%, #8BC34A 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 128, 0, 0.3);
         }
 
-        video {
+        .action-buttons button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 128, 0, 0.4);
+        }
+
+        .action-buttons button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 10px rgba(0, 128, 0, 0.2);
+        }
+
+        .action-buttons button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        #screenShareVideo {
             width: 100%;
             height: auto;
-            max-height: 70vh;
-            border-radius: 15px;
-        }
-
-        .video-container.fullscreen video {
-            max-height: 100vh;
-            border-radius: 0;
-        }
-
-        .fullscreen-controls {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            z-index: 10000;
+            max-height: 60vh;
+            border-radius: 10px;
+            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
             display: none;
         }
 
-        .video-container.fullscreen .fullscreen-controls {
-            display: block;
+        .video-controls {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
         }
 
-        .status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            margin-right: 8px;
-            animation: pulse 2s infinite;
-        }
-
-        .status-indicator.connected {
-            background: #00ff88;
-            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
-        }
-
-        .status-indicator.disconnected {
-            background: #ff4757;
-            box-shadow: 0 0 10px rgba(255, 71, 87, 0.5);
-        }
-
-        .status-indicator.connecting {
-            background: #ffa502;
-            box-shadow: 0 0 10px rgba(255, 165, 2, 0.5);
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.5; }
-            100% { opacity: 1; }
-        }
-
-        .info-text {
-            color: rgba(255, 255, 255, 0.8);
-            text-align: center;
-            margin: 15px 0;
+        .video-controls button {
+            background: linear-gradient(45deg, #2196F3 0%, #03A9F4 100%);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
             font-size: 1rem;
-            line-height: 1.5;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
         }
 
-        .controls-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+        .video-controls button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
         }
 
         .connection-info {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-        }
-
-        .peer-list {
             background: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
             padding: 15px;
-            margin: 15px 0;
-            max-height: 200px;
-            overflow-y: auto;
-        }
-
-        .peer-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .peer-item:last-child {
-            border-bottom: none;
-        }
-
-        .loading-spinner {
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            border-top: 3px solid #00ff88;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .notification {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 15px 20px;
             border-radius: 10px;
-            z-index: 10000;
-            transform: translateX(400px);
-            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            color: white;
         }
 
-        .notification.show {
-            transform: translateX(0);
+        .connection-info h3 {
+            margin-bottom: 10px;
+            color: #4CAF50;
         }
 
-        .notification.success {
-            border-left: 4px solid #00ff88;
+        .connection-info p {
+            margin: 5px 0;
+            font-size: 0.9rem;
         }
 
-        .notification.error {
-            border-left: 4px solid #ff4757;
+        #statusMessage {
+            color: white;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            padding: 10px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
         }
 
-        .notification.warning {
-            border-left: 4px solid #ffa502;
+        .error {
+            background: rgba(244, 67, 54, 0.2) !important;
+            border: 1px solid rgba(244, 67, 54, 0.5);
+        }
+
+        .success {
+            background: rgba(76, 175, 80, 0.2) !important;
+            border: 1px solid rgba(76, 175, 80, 0.5);
+        }
+
+        .warning {
+            background: rgba(255, 193, 7, 0.2) !important;
+            border: 1px solid rgba(255, 193, 7, 0.5);
         }
 
         @media (max-width: 768px) {
             .container {
                 padding: 10px;
+            }
+            
+            .glass-card {
+                padding: 20px;
             }
             
             h1 {
@@ -360,13 +247,9 @@
                 align-items: center;
             }
             
-            .mode-btn {
+            .mode-button {
                 width: 100%;
-                max-width: 300px;
-            }
-            
-            .controls-grid {
-                grid-template-columns: 1fr;
+                max-width: 200px;
             }
         }
     </style>
@@ -374,811 +257,444 @@
 <body>
     <div class="container">
         <div class="glass-card">
-            <h1>🖥️ Remote Control</h1>
+            <h1>Controle Remoto</h1>
             
+            <div class="connection-info">
+                <h3>Instruções de Uso:</h3>
+                <p><strong>Modo Host:</strong> Clique em "Iniciar Compartilhamento" e compartilhe o ID gerado.</p>
+                <p><strong>Modo Cliente:</strong> Digite o ID do host e clique em "Conectar".</p>
+                <p><strong>Importante:</strong> Aguarde alguns segundos após gerar o ID antes de tentar conectar.</p>
+            </div>
+
             <div class="mode-selector">
-                <button class="mode-btn active" onclick="switchMode('host')">
-                    🎯 Compartilhar Tela
-                </button>
-                <button class="mode-btn" onclick="switchMode('client')">
-                    👁️ Acessar Tela
-                </button>
+                <button class="mode-button active" id="hostModeButton">Modo Host</button>
+                <button class="mode-button" id="clientModeButton">Modo Cliente</button>
             </div>
 
-            <!-- Seção Host (Compartilhar Tela) -->
-            <div id="host-section" class="section active">
-                <div class="info-text">
-                    <span class="status-indicator disconnected" id="host-status"></span>
-                    Pronto para compartilhar sua tela
+            <div id="hostMode" class="mode-content">
+                <div class="form-group">
+                    <label for="hostId">Seu ID (compartilhe este ID):</label>
+                    <input type="text" id="hostId" readonly placeholder="ID será gerado automaticamente">
                 </div>
-                
-                <div class="code-display" id="host-code-display" style="display: none;">
-                    <div class="info-text">Código de Acesso:</div>
-                    <div class="access-code" id="access-code">------</div>
-                    <div class="info-text">Compartilhe este código com quem deseja dar acesso</div>
-                </div>
-
-                <div class="controls-grid">
-                    <button class="control-btn" id="start-sharing" onclick="startSharing()">
-                        🚀 Iniciar Compartilhamento
-                    </button>
-                    <button class="control-btn danger" id="stop-sharing" onclick="stopSharing()" style="display: none;">
-                        ⏹️ Parar Compartilhamento
-                    </button>
-                </div>
-
-                <div class="video-container" id="local-video-container">
-                    <video id="local-video" autoplay muted style="display: none;"></video>
-                    <div id="local-placeholder" class="info-text">
-                        Clique em "Iniciar Compartilhamento" para começar
-                    </div>
-                    <div class="fullscreen-controls">
-                        <button class="control-btn secondary" onclick="exitFullscreen()">
-                            ❌ Sair da Tela Inteira
-                        </button>
-                    </div>
-                </div>
-
-                <div class="peer-list" id="connected-peers" style="display: none;">
-                    <div class="info-text">Usuários Conectados:</div>
-                    <div id="peers-container"></div>
+                <div class="action-buttons">
+                    <button id="startShareButton">Iniciar Compartilhamento</button>
+                    <button id="stopShareButton" disabled>Parar Compartilhamento</button>
                 </div>
             </div>
 
-            <!-- Seção Client (Acessar Tela) -->
-            <div id="client-section" class="section">
-                <div class="info-text">
-                    <span class="status-indicator disconnected" id="client-status"></span>
-                    Digite o código para acessar uma tela compartilhada
+            <div id="clientMode" class="mode-content" style="display: none;">
+                <div class="form-group">
+                    <label for="clientId">ID do Host:</label>
+                    <input type="text" id="clientId" placeholder="Digite o ID do host aqui">
                 </div>
-
-                <input type="text" class="code-input" id="connect-code" placeholder="Digite o código" maxlength="6">
-                
-                <div class="controls-grid">
-                    <button class="control-btn" onclick="connectToHost()">
-                        🔗 Conectar
-                    </button>
-                    <button class="control-btn secondary" onclick="toggleFullscreen()" id="fullscreen-btn" style="display: none;">
-                        🖥️ Tela Inteira
-                    </button>
-                    <button class="control-btn danger" onclick="disconnect()" style="display: none;" id="disconnect-btn">
-                        ❌ Desconectar
-                    </button>
-                </div>
-
-                <div class="video-container" id="remote-video-container">
-                    <video id="remote-video" autoplay style="display: none;"></video>
-                    <div id="remote-placeholder" class="info-text">
-                        Digite um código válido e clique em "Conectar"
-                    </div>
-                    <div class="loading-spinner" id="loading-spinner" style="display: none;"></div>
-                    <div class="fullscreen-controls">
-                        <button class="control-btn secondary" onclick="exitFullscreen()">
-                            ❌ Sair da Tela Inteira
-                        </button>
-                    </div>
-                </div>
-
-                <div class="connection-info" id="connection-info" style="display: none;">
-                    <div class="info-text">
-                        <strong>Controles Disponíveis:</strong><br>
-                        • Clique na tela para controlar o mouse<br>
-                        • Use o teclado normalmente<br>
-                        • Scroll do mouse funciona na área do vídeo<br>
-                        • Duplo clique para tela inteira
-                    </div>
+                <div class="action-buttons">
+                    <button id="connectButton">Conectar</button>
+                    <button id="disconnectButton" disabled>Desconectar</button>
                 </div>
             </div>
+
+            <div class="video-container">
+                <video id="screenShareVideo" autoplay playsinline controls></video>
+                <div class="video-controls" id="videoControls" style="display: none;">
+                    <button id="fullScreenButton">🔍 Tela Cheia</button>
+                    <button id="pipButton">📱 Picture-in-Picture</button>
+                </div>
+            </div>
+
+            <p id="statusMessage">Selecione um modo para começar</p>
         </div>
     </div>
 
-    <!-- Notificações -->
-    <div id="notification" class="notification"></div>
-
+    <script src="https://unpkg.com/peerjs@1.5.2/dist/peerjs.min.js"></script>
     <script>
-        // Configuração WebRTC
-        const configuration = {
-            iceServers: [
-                { urls: 'stun:stun.l.google.com:19302' },
-                { urls: 'stun:stun1.l.google.com:19302' },
-                { urls: 'stun:stun2.l.google.com:19302' }
-            ]
-        };
+        // Elementos DOM
+        const hostModeButton = document.getElementById('hostModeButton');
+        const clientModeButton = document.getElementById('clientModeButton');
+        const hostModeDiv = document.getElementById('hostMode');
+        const clientModeDiv = document.getElementById('clientMode');
+        const hostIdInput = document.getElementById('hostId');
+        const startShareButton = document.getElementById('startShareButton');
+        const stopShareButton = document.getElementById('stopShareButton');
+        const clientIdInput = document.getElementById('clientId');
+        const connectButton = document.getElementById('connectButton');
+        const disconnectButton = document.getElementById('disconnectButton');
+        const screenShareVideo = document.getElementById('screenShareVideo');
+        const fullScreenButton = document.getElementById('fullScreenButton');
+        const pipButton = document.getElementById('pipButton');
+        const videoControls = document.getElementById('videoControls');
+        const statusMessage = document.getElementById('statusMessage');
 
         // Variáveis globais
-        let localStream = null;
-        let peerConnection = null;
-        let dataChannel = null;
-        let isHost = true;
-        let accessCode = null;
-        let currentMode = 'host';
-        let isConnected = false;
-        let connectionAttempts = 0;
-        let maxConnectionAttempts = 5;
+        let peer;
+        let conn;
+        let mediaStream;
+        let isHost = false;
+        let connectionTimeout;
 
-        // Sistema de sinalização melhorado usando LocalStorage para simulação
-        const signalingServer = {
-            setData(key, data) {
-                localStorage.setItem(`remote_${key}`, JSON.stringify({
-                    data: data,
-                    timestamp: Date.now()
-                }));
-            },
-            
-            getData(key) {
-                const item = localStorage.getItem(`remote_${key}`);
-                if (!item) return null;
-                
-                const parsed = JSON.parse(item);
-                // Dados expiram em 5 minutos
-                if (Date.now() - parsed.timestamp > 300000) {
-                    localStorage.removeItem(`remote_${key}`);
-                    return null;
-                }
-                return parsed.data;
-            },
-            
-            removeData(key) {
-                localStorage.removeItem(`remote_${key}`);
-            },
-            
-            createRoom(code) {
-                this.setData(`room_${code}`, {
-                    host: null,
-                    clients: [],
-                    offers: [],
-                    answers: [],
-                    candidates: []
-                });
-                return code;
-            },
-            
-            joinRoom(code, peerId, type) {
-                const room = this.getData(`room_${code}`);
-                if (!room) return false;
-                
-                if (type === 'host') {
-                    room.host = peerId;
-                } else {
-                    if (!room.clients.includes(peerId)) {
-                        room.clients.push(peerId);
-                    }
-                }
-                
-                this.setData(`room_${code}`, room);
-                return true;
-            },
-            
-            sendSignal(code, signal) {
-                const room = this.getData(`room_${code}`);
-                if (!room) return;
-                
-                switch(signal.type) {
-                    case 'offer':
-                        room.offers.push({...signal, timestamp: Date.now()});
-                        break;
-                    case 'answer':
-                        room.answers.push({...signal, timestamp: Date.now()});
-                        break;
-                    case 'ice-candidate':
-                        room.candidates.push({...signal, timestamp: Date.now()});
-                        break;
-                }
-                
-                this.setData(`room_${code}`, room);
-            },
-            
-            getSignals(code, type) {
-                const room = this.getData(`room_${code}`);
-                if (!room) return [];
-                
-                let signals = [];
-                switch(type) {
-                    case 'offers':
-                        signals = room.offers.splice(0);
-                        break;
-                    case 'answers':
-                        signals = room.answers.splice(0);
-                        break;
-                    case 'candidates':
-                        signals = room.candidates.splice(0);
-                        break;
-                }
-                
-                this.setData(`room_${code}`, room);
-                return signals;
-            }
-        };
-
-        // Função para mostrar notificações
-        function showNotification(message, type = 'success') {
-            const notification = document.getElementById('notification');
-            notification.textContent = message;
-            notification.className = `notification ${type}`;
-            notification.classList.add('show');
-            
-            setTimeout(() => {
-                notification.classList.remove('show');
-            }, 3000);
+        // Função para exibir mensagens com estilo
+        function showMessage(message, type = 'info') {
+            statusMessage.textContent = message;
+            statusMessage.className = type;
+            console.log(`[${type.toUpperCase()}] ${message}`);
         }
 
-        // Função para alternar entre modos
+        // Função para gerar ID personalizado mais confiável
+        function generateCustomId() {
+            const timestamp = Date.now().toString(36);
+            const random = Math.random().toString(36).substr(2, 5);
+            return `host-${timestamp}-${random}`;
+        }
+
+        // Função para alternar modos
         function switchMode(mode) {
-            currentMode = mode;
-            
-            // Atualizar botões
-            document.querySelectorAll('.mode-btn').forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Mostrar seção apropriada
-            document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
-            document.getElementById(mode + '-section').classList.add('active');
-            
             // Limpar conexões existentes
-            cleanupConnections();
-            
-            isHost = (mode === 'host');
-            updateStatus('disconnected');
-        }
-
-        // Limpar conexões
-        function cleanupConnections() {
-            if (peerConnection) {
-                peerConnection.close();
-                peerConnection = null;
+            if (peer) {
+                peer.destroy();
+                peer = null;
             }
             
-            if (localStream) {
-                localStream.getTracks().forEach(track => track.stop());
-                localStream = null;
+            if (connectionTimeout) {
+                clearTimeout(connectionTimeout);
+            }
+
+            if (mode === 'host') {
+                hostModeDiv.style.display = 'block';
+                clientModeDiv.style.display = 'none';
+                hostModeButton.classList.add('active');
+                clientModeButton.classList.remove('active');
+                isHost = true;
+            } else {
+                hostModeDiv.style.display = 'none';
+                clientModeDiv.style.display = 'block';
+                hostModeButton.classList.remove('active');
+                clientModeButton.classList.add('active');
+                isHost = false;
             }
             
-            if (dataChannel) {
-                dataChannel.close();
-                dataChannel = null;
-            }
+            resetUI();
+            showMessage('Selecione um modo para começar');
+        }
+
+        // Função para resetar a interface
+        function resetUI() {
+            screenShareVideo.srcObject = null;
+            screenShareVideo.style.display = 'none';
+            videoControls.style.display = 'none';
             
-            isConnected = false;
-            connectionAttempts = 0;
+            if (isHost) {
+                startShareButton.disabled = false;
+                stopShareButton.disabled = true;
+                hostIdInput.value = '';
+            } else {
+                connectButton.disabled = false;
+                disconnectButton.disabled = true;
+            }
         }
 
-        // Gerar código de acesso aleatório
-        function generateAccessCode() {
-            return Math.random().toString(36).substr(2, 6).toUpperCase();
-        }
+        // Event Listeners para os botões de modo
+        hostModeButton.addEventListener('click', () => switchMode('host'));
+        clientModeButton.addEventListener('click', () => switchMode('client'));
 
-        // Iniciar compartilhamento de tela
-        async function startSharing() {
+        // Iniciar compartilhamento de tela (Host)
+        startShareButton.addEventListener('click', async () => {
             try {
-                updateStatus('connecting');
-                showNotification('Iniciando compartilhamento...', 'warning');
+                showMessage('Iniciando serviço de compartilhamento...', 'warning');
                 
-                // Capturar tela com configurações otimizadas
-                localStream = await navigator.mediaDevices.getDisplayMedia({
-                    video: {
-                        cursor: 'always',
-                        displaySurface: 'monitor',
-                        width: { ideal: 1920 },
-                        height: { ideal: 1080 },
-                        frameRate: { ideal: 30 }
-                    },
-                    audio: {
-                        echoCancellation: true,
-                        noiseSuppression: true
+                // Gerar ID personalizado
+                const customId = generateCustomId();
+                
+                // Criar peer com ID personalizado e configurações robustas
+                peer = new Peer(customId, {
+                    debug: 2,
+                    config: {
+                        'iceServers': [
+                            { urls: 'stun:stun.l.google.com:19302' },
+                            { urls: 'stun:stun1.l.google.com:19302' },
+                            { urls: 'stun:stun2.l.google.com:19302' }
+                        ]
+                    }
+                });
+                
+                peer.on('open', id => {
+                    hostIdInput.value = id;
+                    showMessage(`✅ Seu ID: ${id}. Compartilhe este ID e aguarde conexão...`, 'success');
+                    startShareButton.disabled = true;
+                    stopShareButton.disabled = false;
+                });
+
+                peer.on('call', async (call) => {
+                    try {
+                        showMessage('📺 Solicitando permissão para compartilhar tela...', 'warning');
+                        
+                        // Solicitar permissão para compartilhar a tela
+                        const stream = await navigator.mediaDevices.getDisplayMedia({
+                            video: {
+                                mediaSource: 'screen',
+                                width: { ideal: 1920, max: 1920 },
+                                height: { ideal: 1080, max: 1080 },
+                                frameRate: { ideal: 30, max: 60 }
+                            },
+                            audio: {
+                                echoCancellation: true,
+                                noiseSuppression: true,
+                                sampleRate: 44100
+                            }
+                        });
+
+                        mediaStream = stream;
+                        screenShareVideo.srcObject = stream;
+                        screenShareVideo.style.display = 'block';
+                        videoControls.style.display = 'flex';
+                        
+                        // Responder à chamada com o stream
+                        call.answer(stream);
+                        
+                        // Monitorar quando a tela para de ser compartilhada
+                        stream.getVideoTracks()[0].addEventListener('ended', () => {
+                            showMessage('⚠️ Compartilhamento encerrado pelo usuário.', 'warning');
+                            stopShare();
+                        });
+
+                        call.on('close', () => {
+                            showMessage('👋 Cliente desconectado.', 'warning');
+                        });
+
+                        showMessage('🎉 Compartilhamento ativo! Cliente conectado.', 'success');
+                        
+                    } catch (err) {
+                        console.error('Erro ao obter stream de tela:', err);
+                        showMessage('❌ Erro ao iniciar compartilhamento. Verifique as permissões.', 'error');
+                        resetUI();
                     }
                 });
 
-                // Mostrar vídeo local
-                const localVideo = document.getElementById('local-video');
-                localVideo.srcObject = localStream;
-                localVideo.style.display = 'block';
-                document.getElementById('local-placeholder').style.display = 'none';
-
-                // Gerar código de acesso
-                accessCode = generateAccessCode();
-                document.getElementById('access-code').textContent = accessCode;
-                document.getElementById('host-code-display').style.display = 'block';
-                
-                // Criar sala no servidor de sinalização
-                signalingServer.createRoom(accessCode);
-                signalingServer.joinRoom(accessCode, 'host', 'host');
-
-                // Configurar WebRTC
-                await setupPeerConnection();
-                
-                // Atualizar UI
-                document.getElementById('start-sharing').style.display = 'none';
-                document.getElementById('stop-sharing').style.display = 'inline-block';
-                document.getElementById('connected-peers').style.display = 'block';
-                
-                updateStatus('connected');
-                showNotification(`Compartilhamento iniciado! Código: ${accessCode}`, 'success');
-                
-                // Monitorar fim do compartilhamento
-                localStream.getVideoTracks()[0].addEventListener('ended', () => {
-                    showNotification('Compartilhamento encerrado pelo sistema', 'warning');
-                    stopSharing();
+                peer.on('error', err => {
+                    console.error('Erro no Peer (Host):', err);
+                    showMessage(`❌ Erro de conexão: ${err.message}`, 'error');
+                    resetUI();
                 });
-                
-                // Aguardar conexões
-                pollForConnections();
-                
-            } catch (error) {
-                console.error('Erro ao iniciar compartilhamento:', error);
-                showNotification('Erro ao iniciar compartilhamento. Verifique as permissões.', 'error');
-                updateStatus('disconnected');
+
+                peer.on('disconnected', () => {
+                    showMessage('⚠️ Conexão perdida. Tentando reconectar...', 'warning');
+                    peer.reconnect();
+                });
+
+            } catch (err) {
+                console.error('Erro ao iniciar Peer (Host):', err);
+                showMessage('❌ Erro ao iniciar o serviço. Tente novamente.', 'error');
+                resetUI();
             }
+        });
+
+        // Parar compartilhamento de tela
+        function stopShare() {
+            if (mediaStream) {
+                mediaStream.getTracks().forEach(track => track.stop());
+                mediaStream = null;
+            }
+            
+            if (peer) {
+                peer.destroy();
+                peer = null;
+            }
+            
+            if (connectionTimeout) {
+                clearTimeout(connectionTimeout);
+            }
+            
+            resetUI();
+            showMessage('⏹️ Compartilhamento de tela parado.', 'warning');
         }
 
-        // Parar compartilhamento
-        function stopSharing() {
-            cleanupConnections();
-            
-            // Resetar UI
-            document.getElementById('local-video').style.display = 'none';
-            document.getElementById('local-placeholder').style.display = 'block';
-            document.getElementById('host-code-display').style.display = 'none';
-            document.getElementById('start-sharing').style.display = 'inline-block';
-            document.getElementById('stop-sharing').style.display = 'none';
-            document.getElementById('connected-peers').style.display = 'none';
-            
-            updateStatus('disconnected');
-            
-            if (accessCode) {
-                signalingServer.removeData(`room_${accessCode}`);
-                accessCode = null;
-            }
-            
-            showNotification('Compartilhamento encerrado', 'success');
-        }
+        stopShareButton.addEventListener('click', stopShare);
 
         // Conectar como cliente
-        async function connectToHost() {
-            const code = document.getElementById('connect-code').value.trim().toUpperCase();
-            if (!code || code.length !== 6) {
-                showNotification('Digite um código válido de 6 caracteres', 'error');
+        connectButton.addEventListener('click', () => {
+            const hostId = clientIdInput.value.trim();
+            
+            if (!hostId) {
+                showMessage('⚠️ Por favor, digite o ID do host.', 'warning');
+                return;
+            }
+
+            showMessage('🔄 Conectando ao host...', 'warning');
+            connectButton.disabled = true;
+            
+            try {
+                // Criar peer cliente
+                peer = new Peer({
+                    debug: 2,
+                    config: {
+                        'iceServers': [
+                            { urls: 'stun:stun.l.google.com:19302' },
+                            { urls: 'stun:stun1.l.google.com:19302' },
+                            { urls: 'stun:stun2.l.google.com:19302' }
+                        ]
+                    }
+                });
+                
+                peer.on('open', () => {
+                    showMessage('🔗 Tentando conectar ao host...', 'warning');
+                    
+                    // Timeout para conexão
+                    connectionTimeout = setTimeout(() => {
+                        showMessage('⏰ Timeout na conexão. Verifique o ID do host.', 'error');
+                        disconnectClient();
+                    }, 15000);
+                    
+                    // Fazer chamada para o host
+                    conn = peer.call(hostId);
+                    
+                    if (!conn) {
+                        showMessage('❌ Não foi possível iniciar a chamada. Verifique o ID.', 'error');
+                        disconnectClient();
+                        return;
+                    }
+                    
+                    conn.on('stream', (stream) => {
+                        if (connectionTimeout) {
+                            clearTimeout(connectionTimeout);
+                        }
+                        
+                        screenShareVideo.srcObject = stream;
+                        screenShareVideo.style.display = 'block';
+                        videoControls.style.display = 'flex';
+                        showMessage('🎉 Conectado! Recebendo compartilhamento de tela.', 'success');
+                        connectButton.disabled = true;
+                        disconnectButton.disabled = false;
+                    });
+
+                    conn.on('close', () => {
+                        showMessage('👋 Host encerrou o compartilhamento.', 'warning');
+                        disconnectClient();
+                    });
+
+                    conn.on('error', (err) => {
+                        console.error('Erro na conexão (Cliente):', err);
+                        if (connectionTimeout) {
+                            clearTimeout(connectionTimeout);
+                        }
+                        
+                        if (err.type === 'peer-unavailable') {
+                            showMessage('❌ Host não encontrado. Verifique se o ID está correto e se o host está online.', 'error');
+                        } else {
+                            showMessage(`❌ Erro na conexão: ${err.message}`, 'error');
+                        }
+                        disconnectClient();
+                    });
+                });
+
+                peer.on('error', err => {
+                    console.error('Erro no Peer (Cliente):', err);
+                    if (connectionTimeout) {
+                        clearTimeout(connectionTimeout);
+                    }
+                    
+                    if (err.type === 'peer-unavailable') {
+                        showMessage('❌ Host não encontrado. Verifique o ID e tente novamente.', 'error');
+                    } else if (err.type === 'network') {
+                        showMessage('❌ Erro de rede. Verifique sua conexão com a internet.', 'error');
+                    } else {
+                        showMessage(`❌ Erro: ${err.message}`, 'error');
+                    }
+                    disconnectClient();
+                });
+
+                peer.on('disconnected', () => {
+                    showMessage('⚠️ Conexão perdida. Tentando reconectar...', 'warning');
+                    peer.reconnect();
+                });
+
+            } catch (err) {
+                console.error('Erro ao conectar:', err);
+                showMessage('❌ Erro ao conectar. Tente novamente.', 'error');
+                disconnectClient();
+            }
+        });
+
+        // Desconectar como cliente
+        function disconnectClient() {
+            if (connectionTimeout) {
+                clearTimeout(connectionTimeout);
+            }
+            
+            if (conn) {
+                conn.close();
+                conn = null;
+            }
+            
+            if (peer) {
+                peer.destroy();
+                peer = null;
+            }
+            
+            resetUI();
+            showMessage('🔌 Desconectado.', 'warning');
+        }
+
+        disconnectButton.addEventListener('click', disconnectClient);
+
+        // Funcionalidade de tela cheia
+        fullScreenButton.addEventListener('click', () => {
+            if (!screenShareVideo.srcObject) {
+                showMessage('⚠️ Nenhum vídeo para exibir em tela cheia.', 'warning');
+                return;
+            }
+
+            const video = screenShareVideo;
+            
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            } else {
+                showMessage('❌ Tela cheia não suportada neste navegador.', 'error');
+            }
+        });
+
+        // Funcionalidade Picture-in-Picture
+        pipButton.addEventListener('click', async () => {
+            if (!screenShareVideo.srcObject) {
+                showMessage('⚠️ Nenhum vídeo para Picture-in-Picture.', 'warning');
                 return;
             }
 
             try {
-                updateStatus('connecting');
-                document.getElementById('loading-spinner').style.display = 'block';
-                document.getElementById('remote-placeholder').style.display = 'none';
-                showNotification('Conectando...', 'warning');
-                
-                // Verificar se a sala existe
-                const room = signalingServer.getData(`room_${code}`);
-                if (!room) {
-                    throw new Error('Código inválido ou sala não encontrada');
+                if (document.pictureInPictureElement) {
+                    await document.exitPictureInPicture();
+                } else {
+                    await screenShareVideo.requestPictureInPicture();
                 }
-                
-                // Entrar na sala
-                const joined = signalingServer.joinRoom(code, 'client_' + Date.now(), 'client');
-                if (!joined) {
-                    throw new Error('Não foi possível entrar na sala');
-                }
-                
-                accessCode = code;
-                
-                // Configurar WebRTC
-                await setupPeerConnection();
-                
-                // Criar oferta
-                const offer = await peerConnection.createOffer({
-                    offerToReceiveVideo: true,
-                    offerToReceiveAudio: true
-                });
-                
-                await peerConnection.setLocalDescription(offer);
-                
-                // Enviar oferta
-                signalingServer.sendSignal(accessCode, {
-                    type: 'offer',
-                    offer: offer,
-                    from: 'client'
-                });
-                
-                // Aguardar resposta
-                pollForAnswers();
-                
-                document.getElementById('disconnect-btn').style.display = 'inline-block';
-                document.getElementById('fullscreen-btn').style.display = 'inline-block';
-                
-                // Timeout para conexão
-                setTimeout(() => {
-                    if (!isConnected) {
-                        showNotification('Timeout na conexão. Tente novamente.', 'error');
-                        disconnect();
-                    }
-                }, 15000);
-                
-            } catch (error) {
-                console.error('Erro ao conectar:', error);
-                showNotification('Erro ao conectar: ' + error.message, 'error');
-                updateStatus('disconnected');
-                document.getElementById('loading-spinner').style.display = 'none';
-                document.getElementById('remote-placeholder').style.display = 'block';
+            } catch (err) {
+                console.error('Erro no Picture-in-Picture:', err);
+                showMessage('❌ Picture-in-Picture não suportado.', 'error');
             }
-        }
+        });
 
-        // Desconectar cliente
-        function disconnect() {
-            cleanupConnections();
-            
-            document.getElementById('remote-video').style.display = 'none';
-            document.getElementById('remote-placeholder').style.display = 'block';
-            document.getElementById('loading-spinner').style.display = 'none';
-            document.getElementById('disconnect-btn').style.display = 'none';
-            document.getElementById('fullscreen-btn').style.display = 'none';
-            document.getElementById('connection-info').style.display = 'none';
-            document.getElementById('connect-code').value = '';
-            
-            // Sair da tela inteira se estiver ativa
-            if (document.fullscreenElement) {
-                document.exitFullscreen();
-            }
-            
-            updateStatus('disconnected');
-            accessCode = null;
-            showNotification('Desconectado', 'success');
-        }
-
-        // Configurar conexão WebRTC
-        async function setupPeerConnection() {
-            peerConnection = new RTCPeerConnection(configuration);
-            
-            // Adicionar stream local (apenas para host)
-            if (isHost && localStream) {
-                localStream.getTracks().forEach(track => {
-                    peerConnection.addTrack(track, localStream);
-                });
-            }
-            
-            // Receber stream remoto
-            peerConnection.ontrack = (event) => {
-                console.log('Stream remoto recebido');
-                const remoteVideo = document.getElementById('remote-video');
-                remoteVideo.srcObject = event.streams[0];
-                remoteVideo.style.display = 'block';
-                document.getElementById('remote-placeholder').style.display = 'none';
-                document.getElementById('loading-spinner').style.display = 'none';
-                document.getElementById('connection-info').style.display = 'block';
-                
-                isConnected = true;
-                updateStatus('connected');
-                showNotification('Conectado com sucesso!', 'success');
-                
-                // Configurar controles remotos
-                setupRemoteControls();
-            };
-            
-            // Configurar data channel para controle remoto
-            if (isHost) {
-                dataChannel = peerConnection.createDataChannel('control', { 
-                    ordered: true,
-                    maxRetransmits: 3
-                });
-                setupDataChannel(dataChannel);
-            } else {
-                peerConnection.ondatachannel = (event) => {
-                    setupDataChannel(event.channel);
-                };
-            }
-            
-            // Lidar com candidatos ICE
-            peerConnection.onicecandidate = (event) => {
-                if (event.candidate && accessCode) {
-                    signalingServer.sendSignal(accessCode, {
-                        type: 'ice-candidate',
-                        candidate: event.candidate,
-                        from: isHost ? 'host' : 'client'
-                    });
-                }
-            };
-            
-            // Monitorar estado da conexão
-            peerConnection.onconnectionstatechange = () => {
-                console.log('Connection state:', peerConnection.connectionState);
-                
-                switch(peerConnection.connectionState) {
-                    case 'connected':
-                        isConnected = true;
-                        updateStatus('connected');
-                        break;
-                    case 'disconnected':
-                    case 'failed':
-                        isConnected = false;
-                        updateStatus('disconnected');
-                        if (!isHost) {
-                            showNotification('Conexão perdida', 'error');
-                        }
-                        break;
-                    case 'connecting':
-                        updateStatus('connecting');
-                        break;
-                }
-            };
-
-            // Monitorar estado do ICE
-            peerConnection.oniceconnectionstatechange = () => {
-                console.log('ICE connection state:', peerConnection.iceConnectionState);
-                
-                if (peerConnection.iceConnectionState === 'failed') {
-                    // Tentar reconectar
-                    if (connectionAttempts < maxConnectionAttempts) {
-                        connectionAttempts++;
-                        showNotification(`Tentativa de reconexão ${connectionAttempts}/${maxConnectionAttempts}`, 'warning');
-                        setTimeout(() => {
-                            if (!isHost && accessCode) {
-                                connectToHost();
-                            }
-                        }, 2000);
-                    } else {
-                        showNotification('Falha na conexão após várias tentativas', 'error');
-                        if (!isHost) disconnect();
-                    }
-                }
-            };
-        }
-
-        // Configurar data channel para controle remoto
-        function setupDataChannel(channel) {
-            dataChannel = channel;
-            
-            dataChannel.onopen = () => {
-                console.log('Data channel aberto');
-                showNotification('Canal de controle estabelecido', 'success');
-            };
-            
-            dataChannel.onmessage = (event) => {
-                if (isHost) {
-                    // Host recebe comandos de controle
-                    try {
-                        const command = JSON.parse(event.data);
-                        executeRemoteCommand(command);
-                    } catch (e) {
-                        console.error('Erro ao processar comando:', e);
-                    }
-                }
-            };
-            
-            dataChannel.onerror = (error) => {
-                console.error('Erro no data channel:', error);
-            };
-        }
-
-        // Executar comando remoto (simulado)
-        function executeRemoteCommand(command) {
-            console.log('Executando comando remoto:', command);
-            
-            // Em uma implementação real, isso seria feito através de uma extensão do navegador
-            // ou aplicação desktop que pode controlar o sistema operacional
-            
-            switch(command.type) {
-                case 'click':
-                    console.log(`Click simulado em: ${command.x}, ${command.y}`);
-                    break;
-                case 'keydown':
-                    console.log(`Tecla pressionada: ${command.key}`);
-                    break;
-                case 'scroll':
-                    console.log(`Scroll: ${command.deltaX}, ${command.deltaY}`);
-                    break;
-            }
-        }
-
-        // Polling para conexões (host)
-        function pollForConnections() {
-            if (!isHost || !accessCode) return;
-            
-            const offers = signalingServer.getSignals(accessCode, 'offers');
-            
-            offers.forEach(async (signal) => {
-                try {
-                    await peerConnection.setRemoteDescription(signal.offer);
-                    const answer = await peerConnection.createAnswer();
-                    await peerConnection.setLocalDescription(answer);
-                    
-                    signalingServer.sendSignal(accessCode, {
-                        type: 'answer',
-                        answer: answer,
-                        from: 'host'
-                    });
-                    
-                    showNotification('Cliente conectado!', 'success');
-                } catch (e) {
-                    console.error('Erro ao processar oferta:', e);
-                }
-            });
-            
-            const candidates = signalingServer.getSignals(accessCode, 'candidates');
-            candidates.forEach(async (signal) => {
-                if (signal.from !== 'host') {
-                    try {
-                        await peerConnection.addIceCandidate(signal.candidate);
-                    } catch (e) {
-                        console.error('Erro ao adicionar candidato ICE:', e);
-                    }
-                }
-            });
-            
-            setTimeout(pollForConnections, 1000);
-        }
-
-        // Polling para respostas (cliente)
-        function pollForAnswers() {
-            if (isHost || !accessCode) return;
-            
-            const answers = signalingServer.getSignals(accessCode, 'answers');
-            answers.forEach(async (signal) => {
-                try {
-                    await peerConnection.setRemoteDescription(signal.answer);
-                } catch (e) {
-                    console.error('Erro ao processar resposta:', e);
-                }
-            });
-            
-            const candidates = signalingServer.getSignals(accessCode, 'candidates');
-            candidates.forEach(async (signal) => {
-                if (signal.from !== 'client') {
-                    try {
-                        await peerConnection.addIceCandidate(signal.candidate);
-                    } catch (e) {
-                        console.error('Erro ao adicionar candidato ICE:', e);
-                    }
-                }
-            });
-            
-            if (!isConnected && connectionAttempts < maxConnectionAttempts) {
-                setTimeout(pollForAnswers, 1000);
-            }
-        }
-
-        // Atualizar status da conexão
-        function updateStatus(status) {
-            const hostIndicator = document.getElementById('host-status');
-            const clientIndicator = document.getElementById('client-status');
-            
-            if (hostIndicator) {
-                hostIndicator.className = `status-indicator ${status}`;
-            }
-            if (clientIndicator) {
-                clientIndicator.className = `status-indicator ${status}`;
-            }
-        }
-
-        // Configurar controles de mouse e teclado para cliente
-        function setupRemoteControls() {
-            const remoteVideo = document.getElementById('remote-video');
-            
-            // Controle de mouse
-            remoteVideo.addEventListener('click', (event) => {
-                if (!isHost && dataChannel && dataChannel.readyState === 'open') {
-                    const rect = remoteVideo.getBoundingClientRect();
-                    const x = (event.clientX - rect.left) / rect.width;
-                    const y = (event.clientY - rect.top) / rect.height;
-                    
-                    dataChannel.send(JSON.stringify({
-                        type: 'click',
-                        x: x,
-                        y: y,
-                        button: event.button
-                    }));
-                }
-            });
-            
-            // Duplo clique para tela inteira
-            remoteVideo.addEventListener('dblclick', () => {
-                if (!isHost) {
-                    toggleFullscreen();
-                }
-            });
-            
-            // Controle de scroll
-            remoteVideo.addEventListener('wheel', (event) => {
-                if (!isHost && dataChannel && dataChannel.readyState === 'open') {
-                    event.preventDefault();
-                    
-                    dataChannel.send(JSON.stringify({
-                        type: 'scroll',
-                        deltaX: event.deltaX,
-                        deltaY: event.deltaY
-                    }));
-                }
-            });
-            
-            // Controle de teclado
-            document.addEventListener('keydown', (event) => {
-                if (!isHost && dataChannel && dataChannel.readyState === 'open' && 
-                    document.getElementById('remote-video').style.display === 'block') {
-                    
-                    // Evitar atalhos do navegador durante controle remoto
-                    if (event.ctrlKey || event.altKey || event.metaKey) {
-                        event.preventDefault();
-                    }
-                    
-                    dataChannel.send(JSON.stringify({
-                        type: 'keydown',
-                        key: event.key,
-                        code: event.code,
-                        ctrlKey: event.ctrlKey,
-                        altKey: event.altKey,
-                        shiftKey: event.shiftKey,
-                        metaKey: event.metaKey
-                    }));
-                }
-            });
-        }
-
-        // Alternar tela inteira
-        function toggleFullscreen() {
-            const container = document.getElementById('remote-video-container');
-            
-            if (!document.fullscreenElement) {
-                container.requestFullscreen().then(() => {
-                    container.classList.add('fullscreen');
-                    showNotification('Modo tela inteira ativado. ESC para sair.', 'success');
-                }).catch(err => {
-                    showNotification('Erro ao ativar tela inteira', 'error');
-                });
-            } else {
-                exitFullscreen();
-            }
-        }
-
-        // Sair da tela inteira
-        function exitFullscreen() {
-            if (document.fullscreenElement) {
-                document.exitFullscreen().then(() => {
-                    document.getElementById('remote-video-container').classList.remove('fullscreen');
-                    showNotification('Modo tela inteira desativado', 'success');
-                });
-            }
-        }
-
-        // Monitorar mudanças na tela inteira
+        // Detectar mudanças no estado de tela cheia
         document.addEventListener('fullscreenchange', () => {
-            const container = document.getElementById('remote-video-container');
-            if (!document.fullscreenElement) {
-                container.classList.remove('fullscreen');
+            if (document.fullscreenElement) {
+                fullScreenButton.textContent = '🔍 Sair Tela Cheia';
+            } else {
+                fullScreenButton.textContent = '🔍 Tela Cheia';
             }
         });
 
-        // Tecla ESC para sair da tela inteira
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && document.fullscreenElement) {
-                exitFullscreen();
-            }
+        // Detectar mudanças no Picture-in-Picture
+        screenShareVideo.addEventListener('enterpictureinpicture', () => {
+            pipButton.textContent = '📱 Sair PiP';
         });
 
-        // Inicialização
-        document.addEventListener('DOMContentLoaded', () => {
-            updateStatus('disconnected');
-            
-            // Limpar dados antigos do localStorage
-            Object.keys(localStorage).forEach(key => {
-                if (key.startsWith('remote_')) {
-                    const item = localStorage.getItem(key);
-                    if (item) {
-                        try {
-                            const parsed = JSON.parse(item);
-                            if (Date.now() - parsed.timestamp > 300000) {
-                                localStorage.removeItem(key);
-                            }
-                        } catch (e) {
-                            localStorage.removeItem(key);
-                        }
-                    }
-                }
-            });
-            
-            showNotification('Sistema iniciado. Pronto para uso!', 'success');
+        screenShareVideo.addEventListener('leavepictureinpicture', () => {
+            pipButton.textContent = '📱 Picture-in-Picture';
         });
 
-        // Limpeza ao sair da página
-        window.addEventListener('beforeunload', () => {
-            cleanupConnections();
-        });
+        // Inicializar no modo host
+        switchMode('host');
     </script>
 </body>
 </html>
